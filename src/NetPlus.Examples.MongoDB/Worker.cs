@@ -5,17 +5,30 @@ namespace NetPlus.Examples.MongoDB;
 
 public class Worker : BackgroundService
 {
+    private readonly ILogger<Worker> _logger;
     private readonly IProductService _productService;
 
-    public Worker(ILogger<Worker> logger)
+    public Worker(IProductService productService, ILogger<Worker> logger)
     {
+        _productService = productService;
+        _logger = logger;
     }
 
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {
+        _logger.LogInformation("Running MongoDB Sample Worker");
+        _logger.LogInformation("Creating products...");
+        await CreateProducts();
+        _logger.LogInformation("Getting products...");
+        var products = await GetProducts();
+        _logger.LogInformation("Products: ");
+        foreach (var product in products) _logger.LogInformation($"Products: {product.Name} - {product.Price}");
+        _logger.LogInformation("Counting products...");
+        var totalProducts = await CountProducts();
+        _logger.LogInformation($"Total products: {totalProducts}");
     }
 
-    private async Task SeedData()
+    private async Task CreateProducts()
     {
         var products = new List<Product>
         {
@@ -49,5 +62,20 @@ public class Worker : BackgroundService
         {
             await _productService.CreateProduct(product);
         }
+    }
+
+    private async Task<IEnumerable<Product>> GetProducts()
+    {
+        return await _productService.GetProducts();
+    }
+
+    private async Task<long> CountProducts()
+    {
+        return await _productService.CountProducts();
+    }
+
+    private async Task UpdateProduct(string id, Product product)
+    {
+        await _productService.UpdateProduct(id, product);
     }
 }

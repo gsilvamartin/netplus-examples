@@ -66,4 +66,9 @@ public class ProductService : IProductService
     {
         return await _productRepository.FindAsync(x => x.Description == description);
     }
+
+    public async Task<long> CountProducts()
+    {
+        return await _productRepository.CountAsync();
+    }
 }

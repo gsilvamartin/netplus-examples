@@ -15,4 +15,5 @@ public interface IProductService
     Task<IEnumerable<Product>> GetProductsBySku(string sku);
     Task<IEnumerable<Product>> GetProductsByName(string name);
     Task<IEnumerable<Product>> GetProductsByDescription(string description);
+    Task<long> CountProducts();
 }
