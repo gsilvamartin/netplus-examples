@@ -2,6 +2,14 @@ using NetPlus.Examples.MongoDB.Entities;
 
 namespace NetPlus.Examples.MongoDB.Services;
 
+/// <summary>
+/// This is the interface that we will use to interact with the Product entity.
+///
+/// The interface is used to define the methods that we will use to interact with the database.
+/// All the database methods are defined here, and the implementation is done in the ProductService class.
+///
+/// All the methods is using the MongoDb Service Abstraction.
+/// </summary>
 public interface IProductService
 {
     Task<IEnumerable<Product>> GetProducts();
