@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetPlus.Examples.MongoDB", "NetPlus.Examples.MongoDB\NetPlus.Examples.MongoDB.csproj", "{F9F7BE77-53E8-40CE-8931-2DF6D98057DD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetPlus.Examples.Redis", "NetPlus.Examples.Redis\NetPlus.Examples.Redis.csproj", "{C3671E60-F238-4DFF-88E7-71B16DF610EF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{F9F7BE77-53E8-40CE-8931-2DF6D98057DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F9F7BE77-53E8-40CE-8931-2DF6D98057DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F9F7BE77-53E8-40CE-8931-2DF6D98057DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3671E60-F238-4DFF-88E7-71B16DF610EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3671E60-F238-4DFF-88E7-71B16DF610EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3671E60-F238-4DFF-88E7-71B16DF610EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3671E60-F238-4DFF-88E7-71B16DF610EF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
