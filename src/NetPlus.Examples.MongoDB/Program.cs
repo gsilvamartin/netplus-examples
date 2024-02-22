@@ -16,8 +16,8 @@ builder.Services.ConfigureMongoDb(config =>
 });
 
 // For using the IMongoRepository<T> we need to register it in the service collection
-builder.Services.AddScoped<IMongoRepository<Product>, MongoRepository<Product>>();
-builder.Services.AddScoped<IProductService, ProductService>();
+builder.Services.AddMongoRepository<Product>();
+builder.Services.AddTransient<IProductService, ProductService>();
 builder.Services.AddHostedService<Worker>();
 
 var host = builder.Build();
