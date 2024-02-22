@@ -3,11 +3,21 @@ using NetPlus.Examples.MongoDB.Services;
 
 namespace NetPlus.Examples.MongoDB;
 
+/// <summary>
+/// This is the Worker class, which is a BackgroundService.
+///
+/// The Worker class is used to demonstrate how to use the MongoDB Service Abstraction.
+/// </summary>
 public class Worker : BackgroundService
 {
     private readonly ILogger<Worker> _logger;
     private readonly IProductService _productService;
 
+    /// <summary>
+    /// Constructor of our MongoDB Sample Worker.
+    /// </summary>
+    /// <param name="productService">Product Service Received by DI</param>
+    /// <param name="logger">Logger instance</param>
     public Worker(IProductService productService, ILogger<Worker> logger)
     {
         _productService = productService;
