@@ -4,6 +4,11 @@ using Newtonsoft.Json;
 
 namespace NetPlus.Examples.Redis;
 
+/// <summary>
+/// This class is an example of a background service that uses the IRedisRepository{T} to interact with the database.
+///
+/// The IRedisRepository{T} is a generic interface that provides methods to interact with the Redis database.
+/// </summary>
 public class Worker : BackgroundService
 {
     private readonly IRedisRepository<Product> _productRepository;
