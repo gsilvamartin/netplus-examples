@@ -3,10 +3,18 @@ using NetPlus.ServiceAbstractions.Database.NoSQL.MongoDB.Interfaces;
 
 namespace NetPlus.Examples.MongoDB.Services;
 
+/// <summary>
+/// This is the implementation of the IProductService interface.
+/// <inheritdoc/>
+/// </summary>
 public class ProductService : IProductService
 {
     private readonly IMongoRepository<Product> _productRepository;
 
+    /// <summary>
+    /// The constructor receives an instance of IMongoRepository to interact with the database.
+    /// </summary>
+    /// <param name="productRepository"></param>
     public ProductService(IMongoRepository<Product> productRepository)
     {
         _productRepository = productRepository;
